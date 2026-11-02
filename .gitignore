@@ -18,8 +18,6 @@ PortableGit/
 mingit/
 mingit.zip
 
-# Ignore ML model binaries (too large for git)
-models/*.joblib
 
 # Ignore logs
 *.log
