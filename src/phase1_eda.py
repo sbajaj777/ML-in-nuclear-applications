@@ -5,11 +5,12 @@ import seaborn as sns
 import os
 
 # Ensure directories exist
-os.makedirs('../data_cleaning', exist_ok=True)
+os.makedirs('../data/processed', exist_ok=True)
+os.makedirs('../data/eda_plots', exist_ok=True)
 os.makedirs('../report', exist_ok=True)
 
 # 1. Load the Excel file
-data_path = '../Nb_V_Ti_Mo_Zr_HEA_parameters_CALPHAD.xlsx'
+data_path = '../data/raw/dataset1_calphad_original.xlsx'
 print(f"Loading dataset from {data_path}...")
 try:
     df = pd.read_excel(data_path)
@@ -31,7 +32,7 @@ df_missing = df[missing_mask]
 print(f"\nFound {len(df_missing)} rows with missing CALPHAD outputs.")
 
 # Save report of missing rows
-missing_report_path = '../data_cleaning/missing_calphad_outputs.csv'
+missing_report_path = '../data/processed/missing_calphad_outputs.csv'
 df_missing.to_csv(missing_report_path, index=False)
 print(f"Saved missing rows report to {missing_report_path}")
 
@@ -73,7 +74,7 @@ corr = df_clean[numeric_cols].corr()
 sns.heatmap(corr, annot=True, fmt=".2f", cmap="coolwarm", center=0)
 plt.title("Correlation Heatmap of Numeric Features")
 plt.tight_layout()
-plt.savefig('../data_cleaning/correlation_heatmap.png', dpi=300)
+plt.savefig('../data/eda_plots/correlation_heatmap.png', dpi=300)
 plt.close()
 
 # Plot B: Pairplot of compositions vs Liquidus, density, and is_single_bcc
@@ -83,7 +84,7 @@ pairplot_df = df_clean[vars_to_plot + ['is_single_bcc']]
 g = sns.pairplot(pairplot_df, hue='is_single_bcc', palette=['#e74c3c', '#2ecc71'], 
                  plot_kws={'alpha': 0.6, 's': 20})
 g.fig.suptitle("Pairplot of Compositions vs Properties (colored by phase class)", y=1.02)
-plt.savefig('../data_cleaning/pairplot.png', dpi=300)
+plt.savefig('../data/eda_plots/pairplot.png', dpi=300)
 plt.close()
 
 # Plot C: Histogram of VEC split by is_single_bcc
@@ -94,7 +95,7 @@ plt.title("VEC Distribution by Phase Class (is_single_bcc)")
 plt.xlabel("Valence Electron Concentration (VEC)")
 plt.ylabel("Count")
 plt.tight_layout()
-plt.savefig('../data_cleaning/vec_histogram.png', dpi=300)
+plt.savefig('../data/eda_plots/vec_histogram.png', dpi=300)
 plt.close()
 
 # Plot D: Class balance bar chart
@@ -110,11 +111,11 @@ for p in ax.patches:
                 ha='center', va='center', xytext=(0, 5), textcoords='offset points')
 
 plt.tight_layout()
-plt.savefig('../data_cleaning/class_balance.png', dpi=300)
+plt.savefig('../data/eda_plots/class_balance.png', dpi=300)
 plt.close()
 
 # Save cleaned dataset
-clean_data_path = '../data_cleaning/cleaned_dataset.csv'
+clean_data_path = '../data/processed/cleaned_dataset.csv'
 df_clean.to_csv(clean_data_path, index=False)
 print(f"\nSaved cleaned dataset to {clean_data_path}")
 

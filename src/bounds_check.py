@@ -3,7 +3,7 @@ import numpy as np
 import joblib
 
 # 1. Load the training data to get exact bounds
-train_df = pd.read_csv('../data_cleaning/cleaned_dataset.csv')
+train_df = pd.read_csv('../data/processed/cleaned_dataset.csv')
 features = ['Nb', 'V', 'Ti', 'Mo', 'Zr']
 train_min = train_df[features].min()
 train_max = train_df[features].max()

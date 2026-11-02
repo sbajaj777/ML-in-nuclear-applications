@@ -40,8 +40,8 @@ print("=" * 60)
 print("STEP 1: Loading and combining datasets...")
 print("=" * 60)
 
-df_orig = pd.read_excel('../Nb_V_Ti_Mo_Zr_HEA_parameters_CALPHAD.xlsx')
-df_new  = pd.read_csv('../BTP4output (1).csv')
+df_orig = pd.read_excel('../data/raw/dataset1_calphad_original.xlsx')
+df_new  = pd.read_csv('../data/raw/dataset2_calphad_augmented.csv')
 
 print(f"Original dataset: {len(df_orig)} rows")
 print(f"New dataset:      {len(df_new)} rows")

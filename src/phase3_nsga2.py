@@ -21,7 +21,7 @@ os.makedirs('../report', exist_ok=True)
 
 # 1. Load bounds and models
 print("Loading dataset for bounds and trained models...")
-df = pd.read_csv('../data_cleaning/cleaned_dataset.csv')
+df = pd.read_csv('../data/processed/cleaned_dataset.csv')
 features = ['Nb', 'V', 'Ti', 'Mo', 'Zr']
 
 # Extract bounds to prevent extrapolation

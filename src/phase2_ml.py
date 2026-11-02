@@ -16,7 +16,7 @@ os.makedirs('../report', exist_ok=True)
 
 # 1. Load cleaned data
 print("Loading cleaned dataset...")
-df = pd.read_csv('../data_cleaning/cleaned_dataset.csv')
+df = pd.read_csv('../data/processed/cleaned_dataset.csv')
 features = ['Nb', 'V', 'Ti', 'Mo', 'Zr']
 reg_targets = ['Liquidus', 'Solidus', 'density']
 class_target = 'is_single_bcc'
