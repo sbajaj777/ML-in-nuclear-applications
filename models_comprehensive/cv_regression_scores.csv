@@ -1,0 +1,10 @@
+,Liquidus,Solidus,density
+Simple Linear Regression,0.3354,0.4801,0.0426
+Multiple Linear Regression,0.4706,0.6321,0.1164
+Polynomial Regression,0.5587,0.6981,0.2345
+Ridge,0.4711,0.6325,0.118
+Lasso,0.471,0.6325,0.118
+ElasticNet,0.4711,0.6325,0.118
+Decision Tree,0.5273,0.6839,0.1939
+Random Forest,0.5753,0.7046,0.2311
+XGBoost,0.5757,0.7036,0.229

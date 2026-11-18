@@ -1,0 +1,51 @@
+{
+  "dataset_info": {
+    "dataset1_rows": 2000,
+    "dataset2_rows": 2000,
+    "combined_cleaned": 3927,
+    "bcc_count": 3754,
+    "non_bcc_count": 173
+  },
+  "best_regression": {
+    "Liquidus": {
+      "Model": "Random Forest",
+      "Target": "Liquidus",
+      "MAE": 29.2996,
+      "MSE": 2001.9577,
+      "RMSE": 44.7432,
+      "R2": 0.5642,
+      "Adj_R2": 0.5614,
+      "MAPE_%": 1.3005
+    },
+    "Solidus": {
+      "Model": "Random Forest",
+      "Target": "Solidus",
+      "MAE": 20.4587,
+      "MSE": 1086.6262,
+      "RMSE": 32.964,
+      "R2": 0.6907,
+      "Adj_R2": 0.6887,
+      "MAPE_%": 1.1055
+    },
+    "density": {
+      "Model": "XGBoost",
+      "Target": "density",
+      "MAE": 66.5103,
+      "MSE": 11043.0503,
+      "RMSE": 105.0859,
+      "R2": 0.2332,
+      "Adj_R2": 0.2283,
+      "MAPE_%": 0.9842
+    }
+  },
+  "best_classifier": {
+    "Model": "Random Forest",
+    "Accuracy": 0.6196,
+    "Precision": 0.9888,
+    "Recall": 0.6101,
+    "F1": 0.7539,
+    "AUC_ROC": 0.7874,
+    "Log_Loss": 0.612,
+    "Specificity": 0.8286
+  }
+}
